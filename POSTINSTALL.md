@@ -30,6 +30,9 @@ Add new document to FireStore messages collection and we will deliver it for you
 }
 ```
 
+**Note:** Different documents can be delivered on different channels by changing the channel IDs. You can get the channel ID from your [Channels page](https://dashboard.messagebird.com/en/channels/)
+
+
 ### Using the extension
 
 When triggered by write to specific Firestore collection, this extension will then automatically use MessageBird API to deliver your message.
@@ -37,7 +40,7 @@ When triggered by write to specific Firestore collection, this extension will th
 To learn more about how you can write data to Firestore collections read [firestore documentation](https://firebase.google.com/docs/firestore/manage-data/add-data).
 
 ```typescript
- db.collection('msg').add({
+ db.collection('YOUR_DOCUMENT_COLLECTION').add({
   channelId: 'YOUR_CHANNEL_ID',
   type: 'text',
   content: {
